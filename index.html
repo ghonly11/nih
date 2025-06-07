@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<title>NIHSS 評估指引（完整版）</title>
+<style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    .section {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 16px;
+      margin: 20px;
+      border-radius: 8px;
+      box-sizing: border-box;
+      max-width: 100%;
+    }
+    .instruction {
+      color: #3399ff;
+      font-weight: bold;
+  font-size: 14px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    label.option {
+      display: block;
+      margin: 6px 0;
+      white-space: normal;
+      word-wrap: break-word;
+      word-break: break-word;
+      max-width: 100%;
+    
+  font-size: 15px;
+}
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+    .submit-button {
+      margin: 20px;
+    }
+    @media print {
+      .submit-button {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1 style="padding: 20px;">NIHSS 評估表（完整版，無橫向捲動）</h1>
+<div class="section">
+<h2>意識程度 (1a)</h2>
+<p class="instruction">評估⽅法：輕聲問候→⼤聲問候 → 輕拍病⼈ (輕刺激)→重拍病⼈ →痛刺激(重刺激)，依序進⾏並觀察病⼈之反應予以評估。</p>
+<label class="option" style="font-size:30px"><input name="q1a" type="radio" value="0"/>0 = 警覺、反應靈敏</label>
+<label class="option" style="font-size:30px"><input name="q1a" type="radio" value="1"/>1 = 昏睡，但刺激即可喚醒，回答問題、反應皆正常</label>
+<label class="option" style="font-size:30px"><input name="q1a" type="radio" value="2"/>2 = 半昏迷或遲滯，需要重複刺激或強烈疼痛刺激才有動作反應</label>
+<label class="option" style="font-size:30px"><input name="q1a" type="radio" value="3"/>3 = 昏迷，只剩反射性動作或完全沒反應</label>
+</div>
+<div class="section">
+<h2>意識程度 (1b)</h2>
+<p class="instruction">你今年幾歲？⽽家咩⽉份？</p>
+<label class="option" style="font-size:30px"><input name="q1b" type="radio" value="0"/>0 = <span>兩題都答對</span></label>
+<label class="option" style="font-size:30px"><input name="q1b" type="radio" value="1"/>1 = <span>答對⼀題<span style="color:red;">（⾮失語症問題如插喉、⼝腔外傷、嚴重⼝⿒不適或外語⽅⾔障礙⽽無法回答計1分）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q1b" type="radio" value="2"/>2 = <span>兩題都答錯<span style="color:red;">（失語症或缺乏反應⽽無法理解指令、昏迷(1a=3)計2分）</span></span></label></div>
+<div class="section">
+<h2>意識程度 (1c)</h2>
+<p class="instruction">請你合埋眼、請你擘大眼<br/>請你握實有力嗰隻手，而家放開手<br/><br/>若病人嘗試做但因無力而做得不完全，仍給分<br/><br/>只評估病人第一次嘗試<br/><br/>若病人因外傷、截肢或其他身體的問題無法執行上述命令時，可以用其他簡單指令取代。</p>
+<label class="option" style="font-size:30px"><input name="q1c" type="radio" value="0"/>0 = <span>兩個指令都做對</span></label>
+<label class="option" style="font-size:30px"><input name="q1c" type="radio" value="1"/>1 = <span>做對⼀個指令</span></label>
+<label class="option" style="font-size:30px"><input name="q1c" type="radio" value="2"/>2 = <span>兩個命令都做錯<span style="color:red;">（昏迷的病⼈(1a=3)計2分）</span></span></label></div>
+<div class="section">
+<h2>眼球運動 (2)</h2>
+<p class="instruction">只測⽔平⽅向的眼球運動<br/>若病⼈眼球無法⾃主運動，可轉動病⼈頭部來測試眼球運動（oculocephalic reflex）<br/><br/>Positive oculocephalic reflex = Normal（眼和頭移動⽅向相反）</p>
+<label class="option" style="font-size:30px"><input name="q2" type="radio" value="0"/>0 = <span>左右兩眼活動皆正常</span></label>
+<label class="option" style="font-size:30px"><input name="q2" type="radio" value="1"/>1 = <span>單眼或兩眼活動部分受限制<span style="color:red;">（如動眼神經病變或僅能⾃主或反射運動）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q2" type="radio" value="2"/>2 = <span>完全偏向⼀側，無法以反射性頭眼運動矯正</span></label></div>
+<div class="section">
+<h2>視野 (3)</h2>
+<p class="instruction">遮住⼀眼，以⼿指⽅法測試另⼀眼四⽅四⾓視野。<br/>如病⼈失語，可⽤⼿勢測試是否眨眼。若病⼈能⾃⾏看向⼿指，則視為正常視野。<br/><br/>完成⼀眼，再做另⼀眼。</p>
+<label class="option" style="font-size:30px"><input name="q3" type="radio" value="0"/>0 = <span>正常</span></label>
+<label class="option" style="font-size:30px"><input name="q3" type="radio" value="1"/>1 = <span>部分視野盲<span style="color:red;">（明顯視野不對稱，包括四分之一視野盲）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q3" type="radio" value="2"/>2 = <span>完全一眼盲</span></label>
+<label class="option" style="font-size:30px"><input name="q3" type="radio" value="3"/>3 = <span>兩眼全盲<span style="color:red;">（任何原因造成眼盲或意識不清）</span></span></label></div>
+<div class="section">
+<h2>臉部肌⼒ (4)</h2>
+<p class="instruction">⽤⼝語或⼿勢表達，請病⼈露齒、提⾼眉⽑或閉眼。<br/><br/>若病⼈無法理解，則施予痛刺激觀察臉部對稱性。</p>
+<label class="option" style="font-size:30px"><input name="q4" type="radio" value="0"/>0 = <span>正常</span></label>
+<label class="option" style="font-size:30px"><input name="q4" type="radio" value="1"/>1 = <span>輕癱<span style="color:red;">（鼻翼到嘴角皺摺較淺或微笑時不對稱）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q4" type="radio" value="2"/>2 = <span>部分癱瘓<span style="color:red;">（下半臉表情肌幾近無力）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q4" type="radio" value="3"/>3 = <span>完全癱瘓<span style="color:red;">（上下臉完全無力，昏迷(1a=3)計3分）</span></span></label></div>
+<div class="section">
+<h2>上肢運動 (5aL)</h2>
+<p class="instruction">左上肢抬舉，手掌朝下，坐姿90度或躺姿45度，維持10秒。</p>
+<label class="option" style="font-size:30px"><input name="q5a" type="radio" value="0"/>0 = 正常</label>
+<label class="option" style="font-size:30px"><input name="q5a" type="radio" value="1"/>1 = 手臂下滑但不碰床面</label>
+<label class="option" style="font-size:30px"><input name="q5a" type="radio" value="2"/>2 = 慢慢下滑至床面</label>
+<label class="option" style="font-size:30px"><input name="q5a" type="radio" value="3"/>3 = 僅水平移動</label>
+<label class="option" style="font-size:30px"><input name="q5a" type="radio" value="4"/>4 = 完全癱瘓</label>
+<label class="option" style="font-size:30px"><input name="q5a" type="radio" value="0"/>0 = UN = 截肢或關節融合</label>
+</div>
+<div class="section">
+<h2>上肢運動 (5bR)</h2>
+<p class="instruction">右上肢同上。</p>
+<label class="option" style="font-size:30px"><input name="q5b" type="radio" value="0"/>0 = 正常</label>
+<label class="option" style="font-size:30px"><input name="q5b" type="radio" value="1"/>1 = 手臂下滑但不碰床面</label>
+<label class="option" style="font-size:30px"><input name="q5b" type="radio" value="2"/>2 = 慢慢下滑至床面</label>
+<label class="option" style="font-size:30px"><input name="q5b" type="radio" value="3"/>3 = 僅水平移動</label>
+<label class="option" style="font-size:30px"><input name="q5b" type="radio" value="4"/>4 = 完全癱瘓</label>
+<label class="option" style="font-size:30px"><input name="q5b" type="radio" value="0"/>0 = UN = 截肢或關節融合</label>
+</div>
+<div class="section">
+<h2>下肢運動 (6aL)</h2>
+<p class="instruction">左下肢抬起與床成30度，維持5秒。</p>
+<label class="option" style="font-size:30px"><input name="q6a" type="radio" value="0"/>0 = 正常</label>
+<label class="option" style="font-size:30px"><input name="q6a" type="radio" value="1"/>1 = 腳下滑但不碰床</label>
+<label class="option" style="font-size:30px"><input name="q6a" type="radio" value="2"/>2 = 慢慢下滑至床面</label>
+<label class="option" style="font-size:30px"><input name="q6a" type="radio" value="3"/>3 = 僅水平移動</label>
+<label class="option" style="font-size:30px"><input name="q6a" type="radio" value="4"/>4 = 完全癱瘓</label>
+<label class="option" style="font-size:30px"><input name="q6a" type="radio" value="0"/>0 = UN = 截肢或關節融合</label>
+</div>
+<div class="section">
+<h2>下肢運動 (6bR)</h2>
+<p class="instruction">右下肢同上。</p>
+<label class="option" style="font-size:30px"><input name="q6b" type="radio" value="0"/>0 = 正常</label>
+<label class="option" style="font-size:30px"><input name="q6b" type="radio" value="1"/>1 = 腳下滑但不碰床</label>
+<label class="option" style="font-size:30px"><input name="q6b" type="radio" value="2"/>2 = 慢慢下滑至床面</label>
+<label class="option" style="font-size:30px"><input name="q6b" type="radio" value="3"/>3 = 僅水平移動</label>
+<label class="option" style="font-size:30px"><input name="q6b" type="radio" value="4"/>4 = 完全癱瘓</label>
+<label class="option" style="font-size:30px"><input name="q6b" type="radio" value="0"/>0 = UN = 截肢或關節融合</label>
+</div>
+<div class="section">
+<h2>肢體協調 (7)</h2>
+<p class="instruction">以 finger-to-nose 或 heel-to-shin 測試肢體協調<br/><br/>四肢需個別測試<br/>僅當失調超出無力程度才給分</p>
+<label class="option" style="font-size:30px"><input name="q7" type="radio" value="0"/>0 = <span>無失衡<span style="color:red;">（語言困難、癱瘓或昏迷病人無法評估者亦計0分）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q7" type="radio" value="1"/>1 = <span>1 上肢或 1 下肢失衡</span></label>
+<label class="option" style="font-size:30px"><input name="q7" type="radio" value="2"/>2 = <span>兩肢或以上失衡</span></label>
+<label class="option" style="font-size:30px"><input name="q7" type="radio" value="0"/>0 = <span>UN = 截肢或關節融合，需要記錄原因</span></label></div>
+<div class="section">
+<h2>感覺功能 (8)</h2>
+<p class="instruction">病⼈合眼，同時刺激臉部、雙手、雙腿兩側。<br/>失語者觀察其疼痛表情、皺眉、退縮反應</p>
+<label class="option" style="font-size:30px"><input name="q8" type="radio" value="0"/>0 = <span>正常</span></label>
+<label class="option" style="font-size:30px"><input name="q8" type="radio" value="1"/>1 = <span>患側有感覺但較正常差</span></label>
+<label class="option" style="font-size:30px"><input name="q8" type="radio" value="2"/>2 = <span>完全喪失感覺<span style="color:red;">（無反應且四肢癱瘓或昏迷病人計2分）</span></span></label></div>
+<div class="section">
+<h2>語言功能 (9)</h2>
+<p class="instruction">舉起筆問病⼈：「呢隻係咩？⽤嚟做乜？」<br/><br/>眼盲者描述物品特徵；插喉者以寫字代替</p>
+<label class="option" style="font-size:30px"><input name="q9" type="radio" value="0"/>0 = <span>正常</span></label>
+<label class="option" style="font-size:30px"><input name="q9" type="radio" value="1"/>1 = <span>輕中度失語症<span style="color:red;">（語言不流暢或理解困難但可表達意思）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q9" type="radio" value="2"/>2 = <span>重度失語症<span style="color:red;">（無法有效溝通，須反覆提問）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q9" type="radio" value="3"/>3 = <span>完全不說話<span style="color:red;">（昏迷者一律計3分）</span></span></label></div>
+<div class="section">
+<h2>構音困難 (10)</h2>
+<p class="instruction">請病⼈跟讀：<br/>粵語：「姨丈買⿂腸」<br/>普通話：「⾶機⾶了」<br/>英語：「Fifty-Fifty」</p>
+<label class="option" style="font-size:30px"><input name="q10" type="radio" value="0"/>0 = <span>正常</span></label>
+<label class="option" style="font-size:30px"><input name="q10" type="radio" value="1"/>1 = <span>單字發音不清楚但可以理解</span></label>
+<label class="option" style="font-size:30px"><input name="q10" type="radio" value="2"/>2 = <span>發音不清且無法理解，包括完全無法發音<span style="color:red;">（昏迷者計2分）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q10" type="radio" value="0"/>0 = <span>UN = 插喉或其他器官障礙無法發音，需記錄原因</span></label></div>
+<div class="section">
+<h2>忽略 (11)</h2>
+<p class="instruction">從前述第3與第8項可得知是否有忽略</p>
+<label class="option" style="font-size:30px"><input name="q11" type="radio" value="0"/>0 = <span>正常<span style="color:red;">（昏迷病人計0分）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q11" type="radio" value="1"/>1 = <span>部分忽略<span style="color:red;">（視覺或感覺其中一項對刺激反應減失）</span></span></label>
+<label class="option" style="font-size:30px"><input name="q11" type="radio" value="2"/>2 = <span>完全忽略<span style="color:red;">（對視覺和感覺皆無反應，無法分辨自己肢體）</span></span></label></div>
+<div class="section">
+<h2>總分：<span id="totalScore">0</span></h2>
+<p style="font-size: 0.9em;">※ 若選項包含 UN 或空白，總分可能不完整。</p>
+</div>
+<button class="submit-button" onclick="window.print()">列印評估表</button>
+<div style="margin-top: 30px; text-align: left;">
+</div>
+<div style="margin: 30px;"></div>
+<script>
+function exportToQueryPage() {
+  const scores = {};
+  document.querySelectorAll("input[type='radio']:checked").forEach(input => {
+    scores[input.name] = input.value;
+  });
+  const params = new URLSearchParams(scores).toString();
+  window.location.href = "export-summary-query.html?" + params;
+}
+</script></body>
+<script>
+function exportToTableView() {
+  const scores = {};
+  const inputs = document.querySelectorAll("input[type='radio']:checked");
+  inputs.forEach(input => {
+    const [qname] = input.name.split("_");
+    scores[qname] = input.value;
+  });
+
+  const definitions = {
+    q1a: ["1a. Level of Consciousness (LOC)", "0 = Alert<br>1 = Drowsy<br>2 = Stuporous<br>3 = Coma"],
+    q1b: ["1b. LOC Questions", "0 = Both correct<br>1 = One correct<br>2 = None correct"],
+    q1c: ["1c. LOC Commands", "0 = Obeys both<br>1 = Obeys 1<br>2 = Obeys none"],
+    q2:  ["2. Best gaze", "0 = Normal<br>1 = Partial gaze palsy<br>2 = Forced deviation"],
+    q3:  ["3. Visual", "0 = Normal<br>1 = Partial hemianopia<br>2 = Complete hemianopia<br>3 = Bilateral hemianopia"],
+    q4:  ["4. Facial palsy", "0 = Normal<br>1 = Minor<br>2 = Partial<br>3 = Complete"],
+    q5a: ["5a. Motor Arm - L", "0 = No drift<br>1 = Drifts, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement"],
+    q5b: ["5b. Motor Arm - R", "0 = No drift<br>1 = Drifts, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement"],
+    q6a: ["6a. Motor Leg - L", "0 = No drift<br>1 = Drifts, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement"],
+    q6b: ["6b. Motor Leg - R", "0 = No drift<br>1 = Drifts, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement"],
+    q7:  ["7. Limb ataxia", "0 = Absent<br>1 = Present 1 limb<br>2 = Present 2 limbs"],
+    q8:  ["8. Sensory", "0 = Normal<br>1 = Mild loss<br>2 = Severe loss"],
+    q9:  ["9. Language", "0 = No aphasia<br>1 = Mild<br>2 = Severe<br>3 = Mute"],
+    q10: ["10. Dysarthria", "0 = Normal<br>1 = Mild<br>2 = Severe"],
+    q11: ["11. Extinction/inattention", "0 = None<br>1 = Visual/sensory<br>2 = Profound both"]
+  };
+
+  const corticalSigns = ["q3", "q9", "q11"];
+  let total = 0;
+
+  let html = `
+  <html><head><title>NIHSS Summary</title>
+  <style>
+    body { font-family: Arial; font-size: 13px; margin: 20px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid black; padding: 6px; vertical-align: top; }
+    th { background-color: #e0e0e0; }
+    .cortical { background-color: #dddddd; }
+    .center { text-align: center; }
+  </style></head><body>
+  <h2>NIHSS Assessment Summary (Baseline)</h2>
+
+  <table style="margin-bottom: 20px;">
+    <tr><td><strong>Name:</strong> ______________________</td><td><strong>Sex/Age:</strong> ______________________</td></tr>
+    <tr><td><strong>ID No.:</strong> ______________________</td><td><strong>Ward/Bed:</strong> ______________________</td></tr>
+    <tr><td><strong>AE/HN:</strong> ______________________</td><td><strong>Dept:</strong> ______________________</td></tr>
+  </table>
+
+  <table>
+    <tr>
+      <th>Description</th>
+      <th>Score Definitions</th>
+      <th class="center">Baseline</th>
+    </tr>
+  `;
+
+  Object.keys(definitions).forEach(key => {
+    const [label, defs] = definitions[key];
+    const score = scores[key] ?? "-";
+    if (!isNaN(parseInt(score))) total += parseInt(score);
+    const isCortical = corticalSigns.includes(key) ? ' class="cortical"' : "";
+    html += `<tr${isCortical}>
+      <td>${label}</td>
+      <td>${defs}</td>
+      <td class="center">${score}</td>
+    </tr>`;
+  });
+
+  html += `<tr>
+    <th colspan="2">Total NIHSS Score</th>
+    <th class="center">${total}</th>
+  </tr>`;
+  html += "</table>
+<script>
+function calculateTotalScore() {
+  let total = 0;
+  const inputs = document.querySelectorAll("input[type='radio']:checked");
+  inputs.forEach(input => {
+    const value = parseInt(input.value);
+    if (!isNaN(value)) total += value;
+  });
+  const scoreBox = document.getElementById("totalScore");
+  if (scoreBox) scoreBox.innerText = total;
+}
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("input[type='radio']").forEach(input => {
+    input.addEventListener("change", calculateTotalScore);
+  });
+  calculateTotalScore();
+});
+
+
+function exportToQueryPage() {
+  const scores = {};
+  document.querySelectorAll("input[type='radio']:checked").forEach(input => {
+    scores[input.name] = input.value;
+  });
+
+  const params = new URLSearchParams(scores).toString();
+  window.open("export-summary-query.html?" + params, "_blank");
+}
+</script>
+</html>}
+
+<div style="margin: 30px;"><button class="submit-button" onclick="exportToQueryPage()">🗂️ Export Summary Table</button></div>
+<script>
+function calculateTotalScore() {
+  let total = 0;
+  const inputs = document.querySelectorAll("input[type='radio']:checked");
+  inputs.forEach(input => {
+    const value = parseInt(input.value);
+    if (!isNaN(value)) total += value;
+  });
+  const scoreBox = document.getElementById("totalScore");
+  if (scoreBox) scoreBox.innerText = total;
+}
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("input[type='radio']").forEach(input => {
+    input.addEventListener("change", calculateTotalScore);
+  });
+  calculateTotalScore();
+});
+</script>
