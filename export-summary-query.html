@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NIHSS Assessment Summary (Baseline)</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { border-collapse: collapse; width: 100%; font-size: 14px; }
+    th, td { border: 1px solid #000; padding: 6px; text-align: left; vertical-align: top; }
+    th { background-color: #eee; }
+    .score-col { width: 80px; text-align: center; }
+    .title { font-size: 20px; font-weight: bold; margin-bottom: 10px; }
+    .info-table td { border: none; }
+    .cortical-row td { background-color: #eee !important; }
+  </style>
+
+<style>
+  @media print {
+    body { zoom: 80%; }
+    table { font-size: 10px !important; }
+    td, th { padding: 4px !important; }
+    h2, h3, h4 { font-size: 14px !important; }
+  }
+</style>
+</head>
+<body>
+  <div class="title">NIHSS Assessment Summary (Baseline)</div>
+  <table class="info-table">
+    <tr>
+      <td>Name: ____________________</td>
+      <td>Sex/Age: ____________________</td>
+    </tr>
+    <tr>
+      <td>ID No.: ____________________</td>
+      <td>Ward/Bed: ____________________</td>
+    </tr>
+    <tr>
+      <td>AE/HN: ____________________</td>
+      <td>Dept: ____________________</td>
+    </tr>
+  </table>
+  <br/>
+  <table>
+    <tr>
+      <th style="width: 240px;">Description</th>
+      <th>Score Definitions <span style="float:right;">*cortical signs shaded</span></th>
+      <th class="score-col">Baseline</th>
+    </tr>
+  </table>
+  <br/>
+  <table>
+    <tr>
+      <th style="text-align: right;">Total NIHSS Score</th>
+      <td id="totalScore" class="score-col">0</td>
+    </tr>
+  </table>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    let total = 0;
+    const tbody = document.querySelectorAll("table")[1];
+
+    const scoreMap = {
+  "1a": "Level of Consciousness (LOC)|0 = Alert<br>1 = Drowsy<br>2 = Stuporous<br>3 = Coma",
+  "1b": "LOC Questions (month, age)|0 = Both correct<br>1 = One correct<br>2 = None correct",
+  "1c": "LOC Commands (open/close eyes, open/close fist)|0 = Obeys both<br>1 = Obeys 1<br>2 = Obeys none",
+  "2": "Best gaze|0 = Normal<br>1 = Partial gaze palsy<br>2 = Forced deviation",
+  "3": "Visual|0 = Normal<br>1 = Partial hemianopia<br>2 = Complete hemianopia<br>3 = Bilateral hemianopia",
+  "4": "Facial palsy|0 = Normal<br>1 = Minor<br>2 = Partial<br>3 = Complete",
+  "5a": "Motor Arm - L|0 = No drift<br>1 = Drift, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement",
+  "5b": "Motor Arm - R|0 = No drift<br>1 = Drift, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement",
+  "6a": "Motor Leg - L|0 = No drift<br>1 = Drift, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement",
+  "6b": "Motor Leg - R|0 = No drift<br>1 = Drift, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement",
+  "7": "Limb ataxia|0 = Absent<br>1 = Present 1 limb<br>2 = Present 2 limbs",
+  "8": "Sensory|0 = Normal<br>1 = Mild loss<br>2 = Severe loss",
+  "9": "Best language|0 = No aphasia<br>1 = Mild<br>2 = Severe<br>3 = Mute",
+  "10": "Dysarthria|0 = Normal<br>1 = Mild<br>2 = Severe",
+  "11": "Extinction/inattention|0 = None<br>1 = Visual/sensory<br>2 = Profound both"
+};
+    const corticalKeys = new Set(['11', '1c', '7', '2', '9', '3']);
+    
+    {
+      const val = params.get("q1a");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("1a")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Level of Consciousness (LOC)</td><td>0 = Alert<br>1 = Drowsy<br>2 = Stuporous<br>3 = Coma</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q1b");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("1b")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>LOC Questions (month, age)</td><td>0 = Both correct<br>1 = One correct<br>2 = None correct</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q1c");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("1c")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>LOC Commands (open/close eyes, open/close fist)</td><td>0 = Obeys both<br>1 = Obeys 1<br>2 = Obeys none</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q2");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("2")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Best gaze</td><td>0 = Normal<br>1 = Partial gaze palsy<br>2 = Forced deviation</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q3");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("3")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Visual</td><td>0 = Normal<br>1 = Partial hemianopia<br>2 = Complete hemianopia<br>3 = Bilateral hemianopia</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q4");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("4")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Facial palsy</td><td>0 = Normal<br>1 = Minor<br>2 = Partial<br>3 = Complete</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q5a");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("5a")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Motor Arm - L</td><td>0 = No drift<br>1 = Drift, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q5b");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("5b")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Motor Arm - R</td><td>0 = No drift<br>1 = Drift, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q6a");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("6a")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Motor Leg - L</td><td>0 = No drift<br>1 = Drift, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q6b");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("6b")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Motor Leg - R</td><td>0 = No drift<br>1 = Drift, not hit bed<br>2 = Hits bed<br>3 = No effort<br>4 = No movement</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q7");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("7")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Limb ataxia</td><td>0 = Absent<br>1 = Present 1 limb<br>2 = Present 2 limbs</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q8");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("8")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Sensory</td><td>0 = Normal<br>1 = Mild loss<br>2 = Severe loss</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q9");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("9")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Best language</td><td>0 = No aphasia<br>1 = Mild<br>2 = Severe<br>3 = Mute</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q10");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("10")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Dysarthria</td><td>0 = Normal<br>1 = Mild<br>2 = Severe</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    {
+      const val = params.get("q11");
+      let scoreDisplay = val !== null ? val : "-";
+      if (val !== null && !isNaN(val)) total += parseInt(val);
+      const tr = document.createElement("tr");
+      if (corticalKeys.has("11")) tr.className = "cortical-row";
+      tr.innerHTML = `<td>Extinction/inattention</td><td>0 = None<br>1 = Visual/sensory<br>2 = Profound both</td><td class="score-col">${scoreDisplay}</td>`;
+      tbody.appendChild(tr);
+    }
+    
+
+    document.getElementById("totalScore").innerText = total;
+  </script>
+</body>
+</html>
